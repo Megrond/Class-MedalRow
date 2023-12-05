@@ -8,9 +8,6 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "RU");
-
-
 	MedalsTable mt1;
 	std::cout << "Medals table #1:\n";
 	mt1["UKR"][MedalRow::GOLD] = 14;
@@ -22,9 +19,11 @@ int main()
 	mt1.print();
 
 	std::cout << "\nMedals table #2:\n";
-
 	const MedalsTable mt2{ mt1 };
 	mt2.print();
+
+	char str[] = "I love 123";
+	int len = strlen(str); std::cout << " Length of the string : " << len << std::endl;
 
 	return 0;
 }

@@ -8,8 +8,10 @@ using namespace std;
 class MedalsTable
 {
 public:
-	static const int maxSize{ 10 };  //изменить на динамический массив
-private:
+	const static int maxSize{ 10 };
+
+	MedalsTable() : size{ 0 } {};
+	
 	MedalRow medalRows[MedalsTable::maxSize];
 	int size;
 	int findCountry(const char* country)const
@@ -24,8 +26,7 @@ private:
 		}
 		return -1;
 	}
-public:
-	MedalsTable() : size{ 0 } {};
+
 	MedalRow& operator[](const char* country)
 	{
 		int idx{ findCountry(country) };
